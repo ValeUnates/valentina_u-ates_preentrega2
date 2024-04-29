@@ -11,11 +11,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+SA+Beginner:wght@400..700&family=Imbue:opsz,wght@10..100,100..900&family=Inter:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /* font-family: "Roboto", sans-serif;*/
 
-*{
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} 
 .logo, .encabezado, .bienvenida{
     text-align: center;
     background-color: #F47570;
@@ -24,6 +24,7 @@
 .encabezado{
     font-family: "Dancing Script", cursive;
     font-size: auto;
+    text-shadow: 0 0 5px black;
 }
 .bienvenida{
     font-family: "Merriweather", serif;
@@ -42,21 +43,32 @@
 .galeria{
     display: grid;
     font-size: auto;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 180px);
     grid-template-areas: 
     "texto1 img3"
     "texto2 img1"
     "texto3 img2"
 
-    /* "img1 texto1 img2"
-    "texto2 img3 texto3"; */
 }
+
+@media only screen and (min-width: 700px){
+    .galeria{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, 200px);
+        grid-template-areas: 
+        "img1 texto1 img2"
+        "texto2 img3 texto3";
+    }
+}
+
 .item{
     border: 2px solid #985357 ;
     border-radius: 5px;
     background-size: cover;
     background-position: center;
+    font-family: "Roboto", sans-serif;
+    text-shadow:0 0 5px #985357;
 
 }
 
@@ -92,10 +104,9 @@
 }
 footer{
     background-color:#985357;
-}
-.parrafoFooter, .iconos{
-    align-content: center;
-    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .suscribe, .newslewtter{
     align-content: center;
@@ -104,11 +115,63 @@ footer{
 .botonF, .textoF{
     background-color: grey;
 }
-.makeCuerpo{
+.makeCuerpo, .skinCuerpo{
     background-color:#F9CB9C;
     text-align: center;
+    font-family: "Merriweather", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .mas{
     color:black;
     
+}
+
+.imgMake{
+    border-radius: 10px;
+    padding: 5px;
+}
+.nombreProductos{
+    font-weight: 50;
+    font-size:large;
+    padding: 5px;
+    margin: 0%;
+    text-decoration:double;
+    color: black;
+}
+.precio{
+    font-size: medium;
+}
+.cont{
+    background-image: url(./assets/fondo-contacto.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+}
+.contacto{
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    color: black;
+    padding: 20px;
+}
+.iconosC{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formComent{
+    background-image: url(./assets/fondo_comentarios.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+.form-label, .form-control{
+    width: 400px;
+    text-align: center;
+    text-decoration:double;
 }
